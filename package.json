@@ -1,6 +1,9 @@
 {
   "name": "feo-ds",
-  "private": true,
+  "description": "Component library for Féo's design system",
+  "author": "Pedro Féo",
+  "license": "MIT",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,13 +13,17 @@
     "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
     "format": "prettier --write src//**/*.{ts,tsx} --config ./.prettierrc",
     "preview": "vite preview",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "jest"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.8"
   },
   "devDependencies": {
+    "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
@@ -26,10 +33,16 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.0.2",
-    "vite": "^4.4.5"
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.6.0",
+    "vite-plugin-linter": "^2.0.6",
+    "vite-tsconfig-paths": "^4.2.1"
   },
   "husky": {
     "hooks": {
@@ -38,8 +51,25 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run test",
       "npm run lint",
       "npm run format"
     ]
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/feo-ds.es.js",
+      "require": "./dist/feo-ds.umd.js"
+    }
+  },
+  "main": "./dist/feo-ds.umd.js",
+  "module": "./dist/feo-ds.es.js",
+  "types": "./dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Phe0/feo-ds"
   }
 }
