@@ -1,3 +1,4 @@
+import React from 'react'
 /* eslint-disable react-refresh/only-export-components */
 import { ThemeProvider } from 'styled-components'
 import { RenderOptions, render } from '@testing-library/react'
