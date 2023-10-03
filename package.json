@@ -1,10 +1,9 @@
 {
-  "name": "feo-ds",
+  "name": "feo-design-system",
   "description": "Component library for Féo's design system",
   "author": "Pedro Féo",
   "license": "MIT",
-  "private": false,
-  "version": "0.0.0",
+  "version": "0.0.4",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -51,7 +50,6 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "npm run test",
       "npm run lint",
       "npm run format"
     ]
@@ -61,15 +59,15 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/feo-ds.es.js",
-      "require": "./dist/feo-ds.umd.js"
+      "import": "./dist/feo-design-system.es.js",
+      "require": "./dist/feo-design-system.umd.js"
     }
   },
-  "main": "./dist/feo-ds.umd.js",
-  "module": "./dist/feo-ds.es.js",
+  "main": "./dist/feo-design-system.umd.js",
+  "module": "./dist/feo-design-system.es.js",
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Phe0/feo-ds"
+    "url": "https://github.com/Phe0/feo-design-system"
   }
 }

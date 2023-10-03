@@ -1,7 +1,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { ThemeProvider } from 'styled-components'
 import { RenderOptions, render } from '@testing-library/react'
-import { LightTheme } from './styles/themes'
+import { LightTheme } from './lib/styles/themes'
 import { ReactElement, ReactNode } from 'react'
 
 export function AllProviders({ children }: { children: ReactNode }) {
