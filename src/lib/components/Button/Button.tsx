@@ -1,7 +1,7 @@
 import { ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   mode?: 'primary' | 'secondary'
 }
 
@@ -30,7 +30,7 @@ const Button = styled.button<ButtonProps>`
 
   &:enabled:active {
     border-width: 2px;
-    transform: translate(0px, 1px);
+    transform: translate(0px, 2px);
   }
 
   &:disabled {
